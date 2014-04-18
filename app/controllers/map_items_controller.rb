@@ -15,6 +15,7 @@ class MapItemsController < ApplicationController
   # GET /map_items/new
   def new
     @map_item = MapItem.new
+    @map_item.map = Map.new
   end
 
   # GET /map_items/1/edit
@@ -69,6 +70,6 @@ class MapItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def map_item_params
-      params.require(:map_item).permit(:map_chip_id)
+      params.require(:map_item).permit(:map_chip_id, :x, :y)
     end
 end
