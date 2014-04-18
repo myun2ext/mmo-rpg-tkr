@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :map_items
+
   resources :map_chips
 
   # The priority is based upon order of creation: first created -> highest priority.
