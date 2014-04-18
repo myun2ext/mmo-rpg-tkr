@@ -7,9 +7,19 @@
       %ul
         - @map_item.errors.full_messages.each do |message|
           %li= message
+
+  .field
+    = f.label :x
+    %br/
+    = f.text_field :x
+  .field
+    = f.label :y
+    %br/
+    = f.text_field :y
   .field
     = f.label :map_chip_id
     %br/
-    = f.text_field :map_chip_id
+    = f.collection_select :map_chip_id, MapChip.all, :id, :name
+
   .actions
     = f.submit
