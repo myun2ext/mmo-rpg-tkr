@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140418093700) do
+ActiveRecord::Schema.define(version: 20140418093800) do
+
+  create_table "map_chips", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "maps", force: true do |t|
     t.integer  "x"
