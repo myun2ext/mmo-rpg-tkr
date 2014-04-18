@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140418095105) do
+ActiveRecord::Schema.define(version: 20140418101222) do
 
   create_table "map_chips", force: true do |t|
     t.string   "name"
@@ -32,6 +32,9 @@ ActiveRecord::Schema.define(version: 20140418095105) do
     t.integer  "y"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "map_item_id"
   end
+
+  add_index "maps", ["map_item_id"], name: "index_maps_on_map_item_id", using: :btree
 
 end
