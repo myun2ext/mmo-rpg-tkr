@@ -1,0 +1,15 @@
+%h1 Listing map_chips
+%table
+  %thead
+    %tr
+      %th Name
+      %th{:colspan => "3"}
+  %tbody
+    - @map_chips.each do |map_chip|
+      %tr
+        %td= map_chip.name
+        %td= link_to 'Show', map_chip
+        %td= link_to 'Edit', edit_map_chip_path(map_chip)
+        %td= link_to 'Destroy', map_chip, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Map chip', new_map_chip_path
