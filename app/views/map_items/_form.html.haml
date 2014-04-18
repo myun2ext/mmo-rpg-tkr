@@ -1,0 +1,15 @@
+= form_for(@map_item) do |f|
+  - if @map_item.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@map_item.errors.count, "error")
+        prohibited this map_item from being saved:
+      %ul
+        - @map_item.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.label :map_chip_id
+    %br/
+    = f.text_field :map_chip_id
+  .actions
+    = f.submit

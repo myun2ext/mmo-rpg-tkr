@@ -1,0 +1,7 @@
+%p#notice= notice
+%p
+  %strong Map chip:
+  = @map_item.map_chip
+= link_to 'Edit', edit_map_item_path(@map_item)
+|
+\#{link_to 'Back', map_items_path}
