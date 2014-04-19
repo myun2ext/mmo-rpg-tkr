@@ -10,9 +10,9 @@ describe MapItem do
       )
     end
 
-    it { be_valid }
-    its(:x) { eq 3 }
-    its(:y) { eq 6 }
-    its(:map_chip) { eq ex_map_chip }
+    it { should be_valid }
+    its(:x) { should eq 5 }
+    its(:y) { should eq 6 }
+    its(:map_chip) { should eq ex_map_chip }
   end
 end
