@@ -14,5 +14,10 @@ describe MapItem do
     its(:x) { should eq 3 }
     its(:y) { should eq 6 }
     its(:map_chip) { should eq ex_map_chip }
+
+    context "not parameter specified" do
+      subject { MapItem.new }
+      it { should be_valid }
+    end
   end
 end
