@@ -51,4 +51,26 @@ describe Map do
       end
     end
   end
+
+  describe ".append" do
+    context "specified in Hash Parameters" do
+      subject do
+        Map.append(x: 3, y: 6)
+      end
+      its(:x) { should eq 3 }
+      its(:y) { should eq 6 }
+    end
+
+    context "specified in Not Hash" do
+      let(:map_chip) { FactoryGirl.create :map_chip }
+      subject do
+        Map.append(3, 6, map_chip)
+      end
+
+      it { should be_kind_of(MapItem) }
+      its(:x) { should eq 3 }
+      its(:y) { should eq 6 }
+      its(:map_chip) { should eq map_chip }
+    end
+  end
 end
