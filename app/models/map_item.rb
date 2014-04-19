@@ -5,4 +5,9 @@ class MapItem < ActiveRecord::Base
 
   delegate :x, :x=,
            :y, :y=, to: :map, allow_nil: true
+
+  def initialize(args)
+    super(args)
+    self.map = Map.new(args.slice(:x, :y))
+  end
 end

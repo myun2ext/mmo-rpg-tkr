@@ -11,5 +11,6 @@ class Map < ActiveRecord::Base
 
   class << self
     alias :add :append
+    alias :new_item :new
   end
 end
