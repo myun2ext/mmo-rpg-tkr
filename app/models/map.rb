@@ -3,7 +3,7 @@ class Map < ActiveRecord::Base
     numericality: true,
     presence: true
 
-  validate :x, uniqueness: { scope: :x }
+  validates :x, uniqueness: { scope: :y }
 
   def self.append(args)
     self.create(args)

@@ -7,7 +7,7 @@ describe Map do
     its(:x) { eq 3 }
     its(:y) { eq 6 }
 
-    describe "Validations" do
+    describe "validates of" do
       context "Not Specified X Parameter" do
         it { Map.new(y: 6).should_not be_valid }
       end
@@ -28,24 +28,24 @@ describe Map do
         it { Map.new(x: 3, y: "NOT NUMERIC").should_not be_valid }
       end
 
-      describe "uniqueness" do
+      describe "uniqueness:" do
         before do
           Map.add(x: 3, y: 6)
         end
 
-        context "Not Duplicated X/Y" do
+        context "when Not Duplicated X/Y" do
           it { Map.append(x: 4, y: 8).should be_valid }
         end
 
-        context "Duplicated by X, but not duplicated X/Y" do
+        context "when Duplicated by X, but not duplicated X/Y" do
           it { Map.append(x: 3, y: 8).should be_valid }
         end
 
-        context "Duplicated by Y, but not duplicated X/Y" do
+        context "when Duplicated by Y, but not duplicated X/Y" do
           it { Map.append(x: 4, y: 6).should be_valid }
         end
 
-        context "Duplicated X/Y" do
+        context "when Duplicated X/Y" do
           it { Map.append(x: 3, y: 6).should_not be_valid }
         end
       end
