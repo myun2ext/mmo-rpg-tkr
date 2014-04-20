@@ -1,5 +1,9 @@
 chip = MapChip.create(name: "White Tile")
+8.times { |i|
+  MapChip.create(name: "Cracked White Tile ##{i+1}")
+}
 MapChip.create(name: "Black Tile")
+MapChip.create(name: "Sand")
 MapChip.create(name: "Soil")
 MapChip.create(name: "Grass")
 MapChip.create(name: "Wood")
