@@ -2,12 +2,16 @@
 %table
   %thead
     %tr
+      %th X
+      %th Y
       %th Map chip
       %th{:colspan => "3"}
   %tbody
     - @map_items.each do |map_item|
       %tr
-        %td= map_item.map_chip
+        %td= map_item.x
+        %td= map_item.y
+        %td= '"' +  map_item.map_chip.name + '"'
         %td= link_to 'Show', map_item
         %td= link_to 'Edit', edit_map_item_path(map_item)
         %td= link_to 'Destroy', map_item, method: :delete, data: { confirm: 'Are you sure?' }
