@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :map, only: [:index]
+
   resources :map_items
 
   resources :map_chips
